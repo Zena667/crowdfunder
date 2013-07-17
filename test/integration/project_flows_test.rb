@@ -4,9 +4,9 @@ class ProjectFlowsTest < ActionDispatch::IntegrationTest
   
   test "browsing projects" do 
     # Create three projects
-    # project1 = FactoryGirl.create(:project, :title => "Project 1")
-    # project2 = FactoryGirl.create(:project, :title => "Project 2")
-    # project3 = FactoryGirl.create(:project, :title => "Project 3")
+    project1 = FactoryGirl.create(:project, :title => "Project 1", :id => 1)
+    project2 = FactoryGirl.create(:project, :title => "Project 2", :id => 2)
+    project3 = FactoryGirl.create(:project, :title => "Project 3", :id => 3)
 
     # Go to the page with the projects
     visit "/projects"
@@ -30,7 +30,7 @@ class ProjectFlowsTest < ActionDispatch::IntegrationTest
 
   end
 
-  test "navigation" do
+  test "navigation" do 
     # Visit the root URL
     visit "/"
     # Assert the page we're on is root

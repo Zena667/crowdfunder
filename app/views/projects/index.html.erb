@@ -16,10 +16,12 @@
       </div>
     </div>
   </div>
-  
+
 
   <ul>
-    <li>Project 1</li>
-    <li>Project 2</li>
-    <li>Project 3</li>
+    <% @projects.each do |project| %>
+    <li><%= link_to project.title, project_path(project.id) %></li>
+    <% end %>
+    <!-- <li>Project 2</li>
+    <li>Project 3</li> -->
   </ul>

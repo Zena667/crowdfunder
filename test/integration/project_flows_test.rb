@@ -4,9 +4,9 @@ class ProjectFlowsTest < ActionDispatch::IntegrationTest
   
   test "browsing projects" do 
     # Create three projects
-    project1 = FactoryGirl.create(:project, :title => "Project 1")
-    project2 = FactoryGirl.create(:project, :title => "Project 2")
-    project3 = FactoryGirl.create(:project, :title => "Project 3")
+    # project1 = FactoryGirl.create(:project, :title => "Project 1")
+    # project2 = FactoryGirl.create(:project, :title => "Project 2")
+    # project3 = FactoryGirl.create(:project, :title => "Project 3")
 
     # Go to the page with the projects
     visit "/projects"
@@ -14,7 +14,7 @@ class ProjectFlowsTest < ActionDispatch::IntegrationTest
     assert_equal projects_path, current_path
 
     # Assert this page has the words 'Listing Projects'
-    assert page.has_content?('Listing projects')
+    assert page.has_content?('Listing projects' )
 
     # Assert this page has these words as well
     assert page.has_content?('Project 1')
@@ -22,5 +22,5 @@ class ProjectFlowsTest < ActionDispatch::IntegrationTest
     assert page.has_content?('Project 3')
 
   end
-  
+
 end

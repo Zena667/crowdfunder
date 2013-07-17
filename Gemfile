@@ -7,6 +7,7 @@ gem 'rails', '3.2.13'
 
 gem 'sqlite3'
 gem 'pg' # replacing SQLite w/ PostgreSQL
+gem 'sorcery'
 
 group :tools do
   gem 'guard-test' # automatically runs our tests whenever there have been changes made to them

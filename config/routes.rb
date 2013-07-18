@@ -1,6 +1,10 @@
 Crowdfunder::Application.routes.draw do
 
 
+  get "pledges/create"
+
+  get "pledges/destroy"
+
   resources :projects
   resources :users
   resources :sessions, only: [:new, :create, :destroy]

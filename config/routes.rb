@@ -1,8 +1,17 @@
 Crowdfunder::Application.routes.draw do
 
+
   resources :projects
 
-  root to: 'projects#index' 
+
+  # get '/projects', to: 'projects#index', as: 'projects'
+  # post '/projects', to: 'projects#create'
+  # get  '/projects/new', to: 'projects#new', as: 'new_project'
+  # get  '/projects/:id/edit', to: 'projects#edit', as: 'edit_project'
+  # get  '/projects/:id', to: 'projects#show', as: 'project'
+             
+        
+  root :to => 'static_pages#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

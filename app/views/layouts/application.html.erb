@@ -20,8 +20,8 @@
               <% end %>
                 <%= link_to 'Home', root_path %>
                 </li>
-
-              <% if request.fullpath == project_path('1') || request.fullpath == projects_path %>
+                
+              <% if controller?('projects') %>
                 <li class='active'>
               <% else %>
                 <li>       

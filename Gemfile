@@ -22,6 +22,8 @@ end
 group :test do 
   gem "factory_girl_rails" 
   gem "capybara" # needed for our integration tests, which we'll talk about more later
+  gem "database_cleaner" # used to "undo" any changes we made to the db during tests
+  gem "capybara-webkit", '~> 1.0.0' # Capybara driver needed to handle JS
 end
 
 

@@ -2,7 +2,8 @@ Crowdfunder::Application.routes.draw do
 
 
   resources :projects
-
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
   # get '/projects', to: 'projects#index', as: 'projects'
   # post '/projects', to: 'projects#create'

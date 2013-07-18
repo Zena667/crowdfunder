@@ -6,10 +6,36 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-  
-<body>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#">CrowdFunder</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <% if current_page? root_path %>
+                <li class='active'>
+              <% else %>
+                <li>
+              <% end %>
+                <%= link_to 'Home', root_path %>
+                </li>
 
-<%= yield %>
+              <% if request.fullpath == project_path('1') || request.fullpath == projects_path %>
+                <li class='active'>
+              <% else %>
+                <li>       
+              <% end %>
+                 <%= link_to 'Projects', projects_path %>
+                </li>
 
-</body>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="yield"> 
+      <%= yield %>
+    </div>
+  </body>
 </html>

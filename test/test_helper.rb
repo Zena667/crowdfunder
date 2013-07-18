@@ -3,13 +3,9 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 
 class ActiveSupport::TestCase
-  # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
-  #
-  # Note: You'll currently still have to declare fixtures explicitly in integration tests
-  # -- they do not yet inherit this setting
-  # fixtures :all
-
-  # Add more helper methods to be used by all tests here...
+  teardown do 
+    DatabaseCleaner.clean
+  end
 end
 
 DatabaseCleaner.strategy = :truncation
@@ -41,6 +37,7 @@ class ActionDispatch::IntegrationTest
     fill_in "Email", with: user.email
     fill_in "Password", with: pass
     click_button "Log in"
+    user
     # No asserts because testing is not done inside of a helper method
   end
 end

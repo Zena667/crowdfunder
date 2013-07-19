@@ -1,0 +1,9 @@
+<h1>Make a pledge</h1>
+<!-- Nesting the pledge view inside the projects path -->
+<%= form_for ([@project, @pledge]) do |f| %>
+  <div class="field">
+    <%= f.label :amount %><br/>
+    <%= f.text_field :amount %>
+  </div>
+  <div class="actions"><%= f.submit 'Pledge Now' %></div>
+<% end %>

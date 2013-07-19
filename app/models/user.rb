@@ -4,6 +4,6 @@ class User < ActiveRecord::Base
   has_many :projects
   has_many :pledges
   validates :first_name, :last_name, presence: true
-  validates :email, presence: true, :length => { :minimum => 5}
+  validates :email, presence: true, :length => { :minimum => 5}, :uniqueness => true
   validates :password, :presence => {:on => :create}
 end

@@ -9,6 +9,9 @@ gem 'rails', '3.2.13'
 gem 'pg' # replacing SQLite w/ PostgreSQL
 gem 'sorcery'
 gem "binding_of_caller"
+gem 'jquery-rails'
+gem 'kaminari'
+gem 'kaminari-bootstrap'
 
 group :tools do
   gem 'guard-test' # automatically runs our tests whenever there have been changes made to them

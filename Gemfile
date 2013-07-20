@@ -17,6 +17,7 @@ end
 group :development do
   gem 'better_errors' # makes the errors we see in the browser more descriptive
   gem 'pry-rails'
+  gem 'letter_opener'
 end
 
 group :test do 

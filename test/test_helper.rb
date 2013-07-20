@@ -21,6 +21,10 @@ class ActionDispatch::IntegrationTest
 
   self.use_transactional_fixtures = false 
 
+  setup do
+    reset_email
+  end
+
   # This happens at the end of every test
   teardown do
     DatabaseCleaner.clean       # Erase what we put into the database during the tests
@@ -40,4 +44,13 @@ class ActionDispatch::IntegrationTest
     user
     # No asserts because testing is not done inside of a helper method
   end
+
+   def last_email
+    ActionMailer::Base.deliveries.last
+  end
+ 
+  def reset_email
+    ActionMailer::Base.deliveries = []
+  end
 end
+

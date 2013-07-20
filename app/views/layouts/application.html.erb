@@ -28,7 +28,14 @@
               <% end %>
                  <%= link_to 'Projects', projects_path %>
                 </li>
-                <li>
+                <% if controller?('my/projects') %>
+                  <li class='active'>
+                <% else %>
+                  <li>
+                <% end %>
+                  <%= link_to 'My Projects', my_projects_path %>
+                </li>
+                
             </ul>
 
             <div class="member-links">

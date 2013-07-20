@@ -19,6 +19,8 @@ class PledgesController < ApplicationController
     #manually assign the user_id value inside pledges to the id of the user currently logged in
     @pledge.user_id = current_user.id
     if @pledge.save
+      UserMailer.new_pledge(@pledge).deliver
+       # @project.user.email
       redirect_to project_path(@project), :notice => "Thanks for pledging"
     else
       render 'new'

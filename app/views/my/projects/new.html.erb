@@ -1,0 +1,21 @@
+<h1>Create a project</h1>
+<!-- the :my associates this form with the namespace /my/project to point the actions to the right controller -->
+<%= form_for [:my, @project] do |f| %>
+  <div class="field">
+    <%= f.label :title %><br/>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :teaser %><br/>
+    <%= f.text_field :teaser %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br/>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :goal %><br/>
+    <%= f.text_field :goal %>
+  </div>
+  <div class="actions"><%= f.submit "Publish Project" %></div>
+<% end %>

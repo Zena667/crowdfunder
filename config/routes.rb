@@ -3,8 +3,12 @@ Crowdfunder::Application.routes.draw do
   resources :projects do
     resources :pledges, only: [:new, :create, :destroy]
   end
+  namespace :my do
+    resources :projects
+  end
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+
 
   # get '/projects', to: 'projects#index', as: 'projects'
   # post '/projects', to: 'projects#create'

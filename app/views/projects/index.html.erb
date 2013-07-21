@@ -1,5 +1,12 @@
 <h1>Listing projects</h1>
-
-    <% @projects.each do |project| %>
-    <%= link_to project.title, project_path(project.id) %>
-    <% end %>
+  <p>Displaying projects 1 - 8 of 50 in total.</p>
+    <%= paginate @projects %>
+      <% @projects.each do |project| %>
+            <ul>
+              <li class = "project">
+                <p class="p_text">
+                  <%= link_to project.title, project_path(project.id) %>
+                </p>
+              </li>
+            </ul>
+      <% end %>

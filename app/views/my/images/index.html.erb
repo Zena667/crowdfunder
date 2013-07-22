@@ -1,0 +1,14 @@
+<h1>Project Images</h1>
+<% @project.images.each do |image| %>
+<p><%= image_tag image.file_url.to_s, class: "image" %></p>
+<% end %>
+
+<h2>Upload a new image.</h2>
+<%= form_for [:my, @project, @image], :html => {:multipart => true} do |f| %>
+  <div class="field">
+    <%= f.label :file %>
+    <%= f.file_field :file %><br/>
+  </div>
+  <div class="actions"><%= f.submit "Upload Image" %></div>
+<% end %>
+

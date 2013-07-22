@@ -12,6 +12,7 @@ gem "binding_of_caller"
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
+gem 'carrierwave'
 
 group :tools do
   gem 'guard-test' # automatically runs our tests whenever there have been changes made to them

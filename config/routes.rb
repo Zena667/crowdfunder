@@ -4,7 +4,9 @@ Crowdfunder::Application.routes.draw do
     resources :pledges, only: [:new, :create, :destroy]
   end
   namespace :my do
-    resources :projects
+    resources :projects do
+      resources :images
+    end
   end
   resources :users
   resources :sessions, only: [:new, :create, :destroy]

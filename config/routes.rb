@@ -1,6 +1,9 @@
 Crowdfunder::Application.routes.draw do
 
   resources :projects do
+    collection do
+      get "search"
+    end
     resources :pledges, only: [:new, :create, :destroy]
   end
   namespace :my do

@@ -9,6 +9,14 @@ class ProjectsController < ApplicationController
   def home
   end
 
+  def search
+    @projects = Project.where("title ILIKE '%#{params[:query]}%'")
+
+    respond_to do |format|
+      format.json { render :json => @projects.map { |p| p.title }}
+    end
+  end
+
   def show
     @project = Project.find(params[:id])
   end

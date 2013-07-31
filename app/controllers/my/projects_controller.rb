@@ -43,7 +43,10 @@ before_filter :require_login
     end
   end
 
-  def delete
+  def destroy
+    @project = Project.find(params[:id])
+    @project.destroy
+    redirect_to my_projects_path, notice: 'Project deleted.'
   end
 
 end
